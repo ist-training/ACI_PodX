@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aci = {
-      source = "registry.terraform.io/hashicorp/ciscodevnet/aci"
+      source = "ciscodevnet/aci"
     }
   }
 }
