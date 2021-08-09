@@ -17,3 +17,15 @@ resource "aci_tenant" "demotenant" {
   name        = "test_tf_tenant"
   description = "This tenant is created by terraform ACI provider"
 }
+
+output "tenant_dn" {
+  value = data.aci_tenant.tenant_fetch.id
+}
+
+output "app_dn" {
+  value = data.aci_application_profile.ap_fetch.id
+}
+
+output "epg_dn" {
+  value = data.aci_application_epg.epg_fetch.id
+}
