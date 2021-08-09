@@ -14,7 +14,7 @@ provider "aci" {
 }
 
 resource "aci_tenant" "demotenant" {
-  name        = "test_tf_tenant"
+  name        = "test_tf_tenant_podX"
   description = "This tenant is created by terraform ACI provider"
 }
 
