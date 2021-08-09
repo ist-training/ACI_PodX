@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aci = {
-      source = "https://github.com/CiscoDevNet/terraform-provider-aci/releases/download/v0.7.1/terraform-provider-aci_0.7.1_SHA256SUMS"
+      source = "registry.terraform.io/hashicorp/ciscodevnet/aci"
     }
   }
 }
