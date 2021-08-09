@@ -13,11 +13,15 @@ provider "aci" {
   insecure = true
 }
 
+data "aci_tenant" "tenant_fetch" {
+  name = "data_source_test"
+}
+
 resource "aci_tenant" "demotenant" {
   name        = "test_tf_tenant"
   description = "This tenant is created by terraform ACI provider"
 }
-
+/*
 output "tenant_dn" {
   value = data.aci_tenant.tenant_fetch.id
 }
@@ -28,4 +32,4 @@ output "app_dn" {
 
 output "epg_dn" {
   value = data.aci_application_epg.epg_fetch.id
-}
+}*/
