@@ -1,12 +1,19 @@
 terraform {
   required_providers {
-    aci = {
-      source = "ciscodevnet/aci"
+    ciscoasa = {
+      source = "ciscodevnet/ciscoasa"
     }
   }
 }
 
-provider "aci" {
+provider "ciscoasa" {
+  api_url       = "https://10.154.8.5"
+  username      = "admin"
+  password      = "admin"
+  ssl_no_verify = false
+}
+
+/*provider "aci" {
   username = var.aci_user
   password = var.aci_password
   url      = var.aci_url
@@ -17,7 +24,7 @@ resource "aci_tenant" "demotenant" {
   name        = "test_tf_tenant_podX"
   description = "This tenant is created by terraform ACI provider"
 }
-
+*/
 /*data "aci_tenant" "tenant_fetch" {
   name = "data_source_test"
 }*/
