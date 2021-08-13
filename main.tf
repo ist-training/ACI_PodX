@@ -18,7 +18,7 @@ module "aci_tenant" {
   version = "1.0.0"
 
   tenant_name = var.tenant_name
-  vrfs        = ["MY_VRF1", "MY_VRF2"]
+  vrfs        = var.vrfs //["MY_VRF1", "MY_VRF2"]
   bridge_domains = {
     BD1 = {
       routing = true
