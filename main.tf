@@ -19,7 +19,7 @@ module "aci_tenant" {
 
   tenant_name = var.tenant_name
   vrfs        = var.vrfs //["MY_VRF1", "MY_VRF2"]
-  bridge_domains = {
+  bridge_domains = var.bridge_domains /*{
     BD1 = {
       routing = true
       vrf     = var.vrfs[0]//"MY_VRF1"
@@ -28,7 +28,7 @@ module "aci_tenant" {
       routing = false
       vrf     = var.vrfs[1]//"MY_VRF2"
     }
-  }
+  }*/
   application_profiles = ["ONE", "TWO"]
   epgs = {
     EPG1 = {
