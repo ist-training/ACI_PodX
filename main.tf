@@ -22,11 +22,11 @@ module "aci_tenant" {
   bridge_domains = {
     BD1 = {
       routing = true
-      vrf     = "MY_VRF1"
+      vrf     = var.vrfs[1]//"MY_VRF1"
     },
     BD2 = {
       routing = false
-      vrf     = "MY_VRF2"
+      vrf     = var.vrfs[2]//"MY_VRF2"
     }
   }
   application_profiles = ["ONE", "TWO"]
