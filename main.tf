@@ -12,23 +12,23 @@ provider "aci" {
   url      = var.aci_url
   insecure = true
 }
-/*
+
 module "aci_tenant" {
   source  = "qzx/tenant/aci"
   version = "1.0.0"
 
-  tenant_name = var.tenant_name
-  vrfs        = var.vrfs //["MY_VRF1", "MY_VRF2"]
-  bridge_domains = var.bridge_domains /*{
+  tenant_name = "PodX-Tenant"
+  vrfs        = ["MY_VRF1", "MY_VRF2"]
+  bridge_domains = {
     BD1 = {
       routing = true
-      vrf     = var.vrfs[0]//"MY_VRF1"
+      vrf     = "MY_VRF1"
     },
     BD2 = {
       routing = false
-      vrf     = var.vrfs[1]//"MY_VRF2"
+      vrf     = "MY_VRF2"
     }
-  }*/
+  }
   application_profiles = ["ONE", "TWO"]
   epgs = {
     EPG1 = {
@@ -54,5 +54,3 @@ module "aci_tenant" {
     }
   }
 }
-
-*/
