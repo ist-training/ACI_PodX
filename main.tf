@@ -17,7 +17,7 @@ module "aci_tenant" {
   source  = "qzx/tenant/aci"
   version = "1.0.0"
 
-  tenant_name = "PodX-Tenant"
+  tenant_name = "PodX-Tenant "
   vrfs        = ["MY_VRF1", "MY_VRF2"]
   bridge_domains = {
     BD1 = {
