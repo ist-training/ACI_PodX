@@ -10,7 +10,7 @@ variable "aci_url" {
   type = string
   description = "the hostname or ip address of your APIC server"
 }
-
+/*
 variable "tenant_name" {
   type        = string
   description = "The name of our new Tenant managed by Terraform"
@@ -47,3 +47,4 @@ variable "bridge_domains" {
     error_message = "Allowed characters: `a`-`z`, `A`-`Z`, `0`-`9`, `_`, `.`, `-`. Maximum characters: 64."
   }
 }
+*/
