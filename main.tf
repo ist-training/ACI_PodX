@@ -17,19 +17,18 @@ module "aci_tenant" {
   source  = "qzx/tenant/aci"
   version = "1.0.0"
 
-  tenant_name = var.tenant_name
-  vrfs        = var.vrfs 
+  tenant_name = "example"
+  vrfs        = ["MY_VRF1", "MY_VRF2"]
   bridge_domains = {
     BD1 = {
       routing = true
-      vrf     = var.vrfs[0]
+      vrf     = "MY_VRF1"
     },
     BD2 = {
       routing = false
-      vrf     = var.vrfs[1]
+      vrf     = "MY_VRF2"
     }
   }
-  
   application_profiles = ["ONE", "TWO"]
   epgs = {
     EPG1 = {
