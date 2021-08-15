@@ -17,18 +17,10 @@ module "aci_tenant" {
   source  = "qzx/tenant/aci"
   version = "1.0.0"
 
-  tenant_name = "PodX-Tenant"
-  vrfs        = ["MY_VRF1", "MY_VRF2"]
-  bridge_domains = {
-    BD1 = {
-      routing = true
-      vrf     = "MY_VRF1"
-    },
-    BD2 = {
-      routing = false
-      vrf     = "MY_VRF2"
-    }
-  }
+  tenant_name = var.tenant_name
+  vrfs        = var.vrfs 
+  bridge_domains = var.bridge_domains 
+  
   application_profiles = ["ONE", "TWO"]
   epgs = {
     EPG1 = {
