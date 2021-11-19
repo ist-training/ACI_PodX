@@ -1,8 +1,7 @@
 terraform {
   required_providers {
     aci = {
-      source = "CiscoDevNet/aci"
-//      version = "1.0.1"
+      source = "ciscodevnet/aci"
     }
   }
 }
@@ -14,9 +13,9 @@ provider "aci" {
   insecure = true
 }
 
-module "tenant" {
+module "aci_tenant" {
   source  = "qzx/tenant/aci"
-//  version = "1.2.3"
+  version = "1.0.0"
 
   tenant_name = "example"
   vrfs        = ["MY_VRF1", "MY_VRF2"]
@@ -33,12 +32,14 @@ module "tenant" {
   application_profiles = ["ONE", "TWO"]
   epgs = {
     EPG1 = {
+      name                = "EPG1"
       application_profile = "ONE"
       bridge_domain       = "BD1"
       domains             = ["uni/phys-MY_PHYSICAL_DOMAIN"]
       static_paths        = []
     },
-    EPG2 = {
+    TWO-EPG2 = {
+      name                = "EPG2"
       application_profile = "TWO"
       bridge_domain       = "BD2"
       domains             = ["uni/phys-MY_PHYSICAL_DOMAIN"]
