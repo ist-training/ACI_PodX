@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aci = {
       source = "CiscoDevNet/aci"
-      version = "1.0.1"
+//      version = "1.0.1"
     }
   }
 }
@@ -16,7 +16,7 @@ provider "aci" {
 
 module "tenant" {
   source  = "qzx/tenant/aci"
-  version = "1.2.3"
+//  version = "1.2.3"
 
   tenant_name = "example"
   vrfs        = ["MY_VRF1", "MY_VRF2"]
