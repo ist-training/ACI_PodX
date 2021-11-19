@@ -13,9 +13,9 @@ provider "aci" {
   insecure = true
 }
 
-module "aci_tenant" {
+module "tenant" {
   source  = "qzx/tenant/aci"
-  version = "1.0.0"
+  version = "1.2.3"
 
   tenant_name = "example"
   vrfs        = ["MY_VRF1", "MY_VRF2"]
